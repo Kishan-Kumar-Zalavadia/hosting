@@ -1,6 +1,6 @@
 <div class="announcement-list">
   <div *ngFor="let announcement of (homeAnnouncements.length > 0 ? homeAnnouncements : announcements)" class="announcement-card glass-effect" (click)="onAnnouncementClick(announcement.id)">
-    <img *ngIf="announcement.imageUrl"  src="../../../assets/images/Aparna.jpg" alt="{{ announcement.title }} Image" />
+    <img *ngIf="announcement.imageUrl" [src] ="announcement.imageUrl"   alt="{{ announcement.title }} Image" />
     <div class="content">
       <h2>{{ announcement.title }}</h2>
       <p *ngIf="announcement.content">
