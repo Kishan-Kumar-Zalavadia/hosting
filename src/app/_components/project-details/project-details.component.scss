@@ -1,0 +1,82 @@
+.container {
+     // * Backgound Image
+  background-image: var(--bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.project-details {
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  margin: 0 auto;
+  width: calc(100% - 30vw);
+
+  .title {
+    font-size: 24px;
+    margin: 10px 0;
+    color: var(--main-color);
+    text-transform: uppercase;
+  }
+  .date {
+    color: var(--font-color);
+    font-size: 16px;
+    margin: 5px 0;
+  }
+
+  .description {
+    padding: 15px 0;
+    color: var(--font-color);
+    font-size: 20px;
+  }
+
+  img {
+    max-width: 100%; /* The image will scale with the width of the container */
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+
+  .publications {
+    .publication-title {
+      font-size: 25px;
+      color: var(--font-color);
+      margin-top: 20px;
+      padding: 10px 0px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      .publication-list .publication-list-card {
+        border-bottom: 1px solid var(--font-color);
+        padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+        a {
+          color: var(--main-color);
+          margin: 10px 0;
+          font-size: 20px;
+          font-weight: 200px;
+
+          &:hover {
+            color: var(--main-color-hover);
+            cursor: pointer;
+            transition: color 0.2s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+
+  .no-publications {
+    font-size: 18px;
+    color: var(--font-color);
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-details {
+    width: calc(100% - 10vw);
+  }
+}

@@ -1,0 +1,31 @@
+
+<nav [ngClass]="{'dark-mode': darkModeService.darkMode}">
+  <ul>
+    <li class="logotype">
+      <a routerLink="">Sanjukta's website</a>
+    </li>
+    <li class="burger" (click)="toggleMenu()">
+      <i class="material-icons">{{ isMenuOpen ? "close" : "menu" }}</i>
+    </li>
+  
+    <li class="menu" [class.is-open]="isMenuOpen">
+      <a routerLink="" routerLinkActive="active" (click)="toggleMenu()" [routerLinkActiveOptions]="{ exact: true }" class="menu-item">Home</a>
+      <a routerLink="projects" routerLinkActive="active" (click)="toggleMenu()" [routerLinkActiveOptions]="{ exact: true }" class="menu-item">Projects</a>
+      <a routerLink="publications" routerLinkActive="active" (click)="toggleMenu()" [routerLinkActiveOptions]="{ exact: true }" class="menu-item">Publications</a>
+      <a routerLink="people" routerLinkActive="active" (click)="toggleMenu()" [routerLinkActiveOptions]="{ exact: true }" class="menu-item">People</a>
+      <a routerLink="annoncements" routerLinkActive="active" (click)="toggleMenu()" [routerLinkActiveOptions]="{ exact: true }" class="menu-item">Announcements</a>
+      <a>
+        <div [ngClass]="{'dark-mode': darkModeService.darkMode}" class="dark-mode-toggle">
+          <label class="switch">
+            <input type="checkbox" (change)="toggleDarkMode()" [checked]="darkModeService.darkMode" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </a>
+    </li>
+    
+  </ul>
+</nav>
+<router-outlet></router-outlet>
+
+

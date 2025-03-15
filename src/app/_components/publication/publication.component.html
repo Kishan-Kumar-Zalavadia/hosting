@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="publications" *ngIf="publications && publications.length > 0">
+    <h3 class="publication-title">Publications:</h3>
+    <ul>
+      <li class="publication-list" *ngFor="let publication of publications">
+        <div class="publication-list-card">
+          <a *ngIf="publication.url" [href]="publication.url" target="_blank">
+            {{ publication.title }}
+          </a>
+          <p class="year">{{ publication.year }}</p>
+          <a class="button-link scholar" [href]="publication.googleScholar" target="_blank">
+            <span>Google Scholar</span>
+            <i class="material-icons">keyboard_arrow_right</i>
+          </a>
+          <!-- <a *ngIf="publication.pdf" [href]="publication.pdf" target="_blank"><div class="button">PDF</div></a> -->
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

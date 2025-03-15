@@ -1,0 +1,26 @@
+.container {
+  padding: 20px 20px;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  min-height: 90vh;
+  // * Backgound Image
+  background-image: var(--bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  
+  .person-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 0;
+  }
+  app-person-card {
+    padding: 0;
+  }
+}

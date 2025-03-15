@@ -1,0 +1,48 @@
+.container {
+  // * Backgound Image
+  background-image: var(--bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  padding: 10px;
+  .publications {
+    .publication-title {
+      font-size: 25px;
+      color: var(--font-color);
+      margin-top: 20px;
+      padding: 10px 0px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      .publication-list .publication-list-card {
+        border-bottom: 1px solid var(--main-color);
+        padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+        a {
+          color: var(--font-color);
+          margin: 10px 0;
+          font-size: 20px;
+          font-weight: 200px;
+
+          &:hover {
+            color: var(--main-color);
+            cursor: pointer;
+            transition: all 0s ease;
+          }
+        }
+
+        .year {
+          color: gray;
+          margin-bottom: 5px;
+        }
+        .scholar{
+            color: var(--main-color);
+            font-size: 15px;
+        }
+      }
+    }
+  }
+}

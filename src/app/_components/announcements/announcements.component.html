@@ -1,0 +1,13 @@
+<div class="announcement-list">
+  <div *ngFor="let announcement of (homeAnnouncements.length > 0 ? homeAnnouncements : announcements)" class="announcement-card glass-effect" (click)="onAnnouncementClick(announcement.id)">
+    <img *ngIf="announcement.imageUrl" [src]="announcement.imageUrl" alt="{{ announcement.title }} Image" />
+    <div class="content">
+      <h2>{{ announcement.title }}</h2>
+      <p *ngIf="announcement.content">
+        {{ announcement.content | slice:0:sliceLength }}
+        <span class="clickable-text">...(click to know more)</span>
+      </p>
+      <p *ngIf="announcement.date" class="date">Date: {{ announcement.date | date }}</p>
+    </div>
+  </div>
+</div>

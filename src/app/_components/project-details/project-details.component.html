@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="project-details" *ngIf="project">
+    <h2 class="title">{{ project.name }}</h2>
+    <p *ngIf="project.date" class="date">Date: {{ project.date }}</p>
+    <img [src]="project.image" alt="Project Image" />
+
+    <p class="description">{{ project.description }}</p>
+
+    <div class="publications" *ngIf="publications && publications.length > 0">
+      <h3 class="publication-title">Publications:</h3>
+      <ul>
+        <li class="publication-list" *ngFor="let publication of publications">
+          <div class="publication-list-card">
+            <a *ngIf="publication.url" [href]="publication.url" target="_blank"> {{ publication.title }} </a>
+            <!-- <a *ngIf="publication.pdf" [href]="publication.pdf" target="_blank"><div class="button">PDF</div></a> -->
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="!publications || publications.length === 0">
+      <p>No-publications</p>
+    </div>
+  </div>
+</div>

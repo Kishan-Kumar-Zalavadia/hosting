@@ -1,0 +1,155 @@
+$menuHeight: 60px;
+$menuBreakpoint: 768px;
+
+nav {
+  align-items: center;
+  ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--main-color);
+  }
+
+  .logotype {
+    a {
+      padding: 0 8px;
+      font-size: 1.4rem;
+      text-decoration: none;
+      color: var(--font-color);
+    }
+  }
+
+  .burger {
+    padding: 0 10px;
+    display: none;
+    cursor: pointer;
+
+    i {
+      color: var(--font-color);
+      line-height: $menuHeight;
+    }
+
+    @media (max-width: $menuBreakpoint) {
+      display: block;
+    }
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    margin: 0px 20px;
+    a {
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    a.active {
+      font-weight: bold;
+      border-bottom: 2px solid var(--background-color);
+      color: var(--background-color);
+    }
+
+    @media (max-width: $menuBreakpoint) {
+      display: none;
+      &.is-open {
+        z-index: 99;
+        display: block;
+        position: absolute;
+        top: #{$menuHeight + 2};
+        background: var(--main-color);
+        width: 100%;
+        margin: 0;
+        .menu-item {
+          border-bottom: 1px solid var(--font-color);
+          transition: all 0.3s ease;
+          &:hover{
+            border-bottom: 1px solid var(--background-color);
+            color: var(--background-color);
+          }
+        }
+        .dark-mode-toggle{
+          padding-left: 10px;
+        }
+        a.active {
+          font-weight: bold;
+          border-bottom: 2px solid var(--background-color);
+          color: var(--background-color);
+        }
+      }
+    }
+
+    .menu-item {
+      padding: 0 10px;
+      height: $menuHeight;
+      line-height: $menuHeight;
+      text-decoration: none;
+      display: block;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--font-color);
+    }
+  }
+
+  .dark-mode-toggle {
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 40px; /* Adjust the width of the slider */
+      height: 24px; /* Adjust the height of the slider */
+
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        border-radius: 24px; /* Adjust the border-radius to half of the height */
+        transition: 0.4s;
+
+        &:before {
+          position: absolute;
+          content: "";
+          height: 16px; /* Adjust the size of the slider knob */
+          width: 16px; /* Adjust the size of the slider knob */
+          left: 4px;
+          bottom: 4px;
+          background-color: var(--light);
+          border-radius: 50%;
+          transition: 0.4s;
+        }
+      }
+
+      input:checked + .slider {
+        background-color: #2196f3;
+
+        &:before {
+          transform: translateX(
+            16px
+          ); /* Adjust the translateX value to match the knob size */
+        }
+      }
+    }
+  }
+
+  &.dark-mode {
+    background-color: var(--background-color);
+    color: var(--font-color);
+  }
+
+  .dark-mode-toggle {
+    margin-left: auto; // Pushes the dark mode toggle to the right
+  }
+
+}
+
+// ----------------------------------------------------------------

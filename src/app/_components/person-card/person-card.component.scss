@@ -1,0 +1,116 @@
+.project-card {
+  // border-radius: 5px;
+  padding: 10px;
+  margin: 20px;
+  height: 300px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* Content will stick to the bottom */
+
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card > *:not(:last-child) {
+  filter: blur(0); /* Initial state, no blur */
+  transition: filter 0.3s ease; /* Add transition only for the properties being changed */
+}
+
+.project-card:hover > *:not(:last-child) {
+  filter: blur(30px);
+}
+
+h2 {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.content {
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.person-details {
+  display: none;
+  position: absolute;
+  .person-detail{
+    font-size: 13px;
+  }
+}
+
+.project-card:hover .person-details {
+  z-index: 1000;
+  display: block;
+  color: var(--font-color);
+  font-size: 17px;
+}
+
+.image {
+  flex: 1; /* Takes up the remaining space */
+  display: flex;
+  align-items: center; /* Center image vertically */
+  justify-content: space-around; /* Center image horizontally */
+  overflow: hidden; /* Hide any overflowing content */
+
+  img {
+    max-width: 180px;
+    max-height: 200px;
+  }
+}
+
+.button-link:hover  > *:not(:last-child){
+  color: var(--main-color-hover);
+  text-decoration: underline;
+}
+
+@media (max-width: 990px) {
+  .project-card {
+    width: calc(100vw - 600px);
+    h2 {
+      font-size: 18px;
+    }
+  }
+}
+
+@media (max-width: 840px) {
+  .project-card {
+    // height: auto;
+    // width: calc(100vw - 100px);
+
+    img {
+      max-width: auto;
+    }
+
+    .content {
+      h2 {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .project-card {
+    width: 200px;
+  }
+  .person-details {
+    color: var(--font-color);
+    font-size: 15px;
+    padding-bottom: 2px;
+  }
+}
+
+@media (max-width: 579px) {
+  .project-card {
+    width: 70vw;
+    height: auto;
+    img{
+      width: calc(40vw);
+    }
+  }
+}

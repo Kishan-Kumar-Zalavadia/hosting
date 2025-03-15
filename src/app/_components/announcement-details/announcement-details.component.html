@@ -1,0 +1,6 @@
+<div class="announcement-details" *ngIf="selectedAnnouncement">
+  <h2>{{ selectedAnnouncement.title }}</h2>
+  <img *ngIf="selectedAnnouncement.imageUrl" [src]="selectedAnnouncement.imageUrl" alt="{{ selectedAnnouncement.title }} Image" />
+  <p>{{ selectedAnnouncement.content }}</p>
+  <p class="date">Date: {{ selectedAnnouncement.date | date }}</p>
+</div>
