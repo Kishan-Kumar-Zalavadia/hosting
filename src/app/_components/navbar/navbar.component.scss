@@ -3,6 +3,7 @@ $menuBreakpoint: 768px;
 
 nav {
   align-items: center;
+
   ul {
     margin: 0;
     padding: 0;
@@ -12,13 +13,11 @@ nav {
     background-color: var(--main-color);
   }
 
-  .logotype {
-    a {
-      padding: 0 8px;
-      font-size: 1.4rem;
-      text-decoration: none;
-      color: var(--font-color);
-    }
+  .logotype a {
+    padding: 0 8px;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: var(--font-color);
   }
 
   .burger {
@@ -39,11 +38,13 @@ nav {
   .menu {
     display: flex;
     align-items: center;
-    margin: 0px 20px;
+    margin: 0 20px;
+
     a {
       text-decoration: none;
       margin: 0 10px;
     }
+
     a.active {
       font-weight: bold;
       border-bottom: 2px solid var(--background-color);
@@ -52,6 +53,7 @@ nav {
 
     @media (max-width: $menuBreakpoint) {
       display: none;
+
       &.is-open {
         z-index: 99;
         display: block;
@@ -60,17 +62,21 @@ nav {
         background: var(--main-color);
         width: 100%;
         margin: 0;
+
         .menu-item {
           border-bottom: 1px solid var(--font-color);
           transition: all 0.3s ease;
-          &:hover{
+
+          &:hover {
             border-bottom: 1px solid var(--background-color);
             color: var(--background-color);
           }
         }
-        .dark-mode-toggle{
+
+        .dark-mode-toggle {
           padding-left: 10px;
         }
+
         a.active {
           font-weight: bold;
           border-bottom: 2px solid var(--background-color);
@@ -83,8 +89,6 @@ nav {
       padding: 0 10px;
       height: $menuHeight;
       line-height: $menuHeight;
-      text-decoration: none;
-      display: block;
       text-transform: uppercase;
       font-size: 0.8rem;
       font-weight: 600;
@@ -93,11 +97,13 @@ nav {
   }
 
   .dark-mode-toggle {
+    margin-left: auto;
+
     .switch {
       position: relative;
       display: inline-block;
-      width: 40px; /* Adjust the width of the slider */
-      height: 24px; /* Adjust the height of the slider */
+      width: 40px;
+      height: 24px;
 
       input {
         opacity: 0;
@@ -113,14 +119,14 @@ nav {
         right: 0;
         bottom: 0;
         background-color: #ccc;
-        border-radius: 24px; /* Adjust the border-radius to half of the height */
+        border-radius: 24px;
         transition: 0.4s;
 
         &:before {
           position: absolute;
           content: "";
-          height: 16px; /* Adjust the size of the slider knob */
-          width: 16px; /* Adjust the size of the slider knob */
+          height: 16px;
+          width: 16px;
           left: 4px;
           bottom: 4px;
           background-color: var(--light);
@@ -133,9 +139,7 @@ nav {
         background-color: #2196f3;
 
         &:before {
-          transform: translateX(
-            16px
-          ); /* Adjust the translateX value to match the knob size */
+          transform: translateX(16px);
         }
       }
     }
@@ -145,11 +149,4 @@ nav {
     background-color: var(--background-color);
     color: var(--font-color);
   }
-
-  .dark-mode-toggle {
-    margin-left: auto; // Pushes the dark mode toggle to the right
-  }
-
 }
-
-// ----------------------------------------------------------------
