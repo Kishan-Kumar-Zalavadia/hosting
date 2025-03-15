@@ -1,5 +1,4 @@
 export interface Details {
-    
   profession_title?: string;
   work_location?: string;
   work_place_link?: string;
@@ -10,6 +9,7 @@ export interface Details {
   description_paragraph_1?: string;
   description_paragraph_2?: string;
 
+  profile_image?: string;
   email?: string;
   phone?: string;
   place?: string;

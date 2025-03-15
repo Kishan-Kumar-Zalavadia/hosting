@@ -27,6 +27,9 @@ export const DETAILS: Details = {
   description_paragraph_2:
     'My research is on studying the properties of large, dynamic complex networks and using high performance computing to analyze them. I am particularly interested in understanding how noise affects network analysis, and developing uncertainty quantification for network analysis.',
 
+  //* Profile Image
+  profile_image: 'assets/images/profile.jpeg',
+
   //* Email Address
   email: 'sanjukta.bhowmick@unt.edu',
 
