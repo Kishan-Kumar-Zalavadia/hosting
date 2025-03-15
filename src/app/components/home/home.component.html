@@ -1,0 +1,134 @@
+<!-- * Static Detalis -->
+<!-- <div class="main-container">
+  <div class="profile-container">
+    <div class="left-half">
+      <div class="left-container">
+        <div class="profile-image">
+          <img src="../../assets/images/profile.jpeg" alt="Your Name" />
+        </div>
+        <h2>Sanjukta Bhowmick</h2>
+
+        <p>Research Associate Professor</p>
+        <p>
+          <a href="https://computerscience.engineering.unt.edu/" target="_blank"
+            >Department of Computer Science and Engineering, University of North
+            Texas</a
+          >
+        </p>
+        <div class="social-media-links">
+          <a href="https://github.com/SanjuktaBhowmick/ESSENS" target="_blank"
+            ><fa-icon [icon]="faGithub"></fa-icon
+          ></a>
+          <a
+            href="https://scholar.google.com/citations?user=MegF9mYAAAAJ&hl=en"
+            target="_blank"
+            ><fa-icon [icon]="faGoogle"></fa-icon
+          ></a>
+          <a href="../../assets/cv.pdf" target="_blank"
+            ><fa-icon [icon]="faFile"></fa-icon
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-half">
+      <div class="right-container">
+        <p class="description">
+          I am a research associate professor at the CSE department at UNT. I
+          love all things graphs.
+        </p>
+        <p class="description">
+          My research is on studying the properties of large, dynamic complex
+          networks and using high performance computing to analyze them. I am
+          particularly interested in understanding how noise affects network
+          analysis, and developing uncertainty quantification for network
+          analysis.
+        </p>
+        <div class="contact-information">
+          <h2 class="contact-heading">Contact Information</h2>
+          <ul class="contact">
+            <li>Email: sanjukta.bhowmick@unt.edu</li>
+            <li>Phone: 814-880-6875</li>
+            <li>F291 Discovery Park, Denton, TX, 76201, United States</li>
+
+            <h3 class="contact-heading">Office Hours:</h3>
+            <ul class="office-hoours">
+              <li>Monday: 12:30 to 13:30</li>
+              <li>Wednesday: 13:00 to 14:00</li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="homeAnnouncements.length!=0" class="announcement">
+    <h1>Announcements</h1>
+    <app-announcements [homeAnnouncements]="homeAnnouncements"></app-announcements>
+  </div>
+</div> -->
+
+
+<!-- * Dynamic Details - from details-data -->
+<div class="main-container">
+  <div class="profile-container">
+    <div class="left-half">
+      <div class="left-container">
+        <div class="profile-image">
+          <!-- <img src="{{details.profile_image}}" alt="Sanjukta Bhowmick image" /> -->
+          <img [src]="details.profile_image" alt="Sanjukta Bhowmick image" />
+        </div>
+        <h2>Sanjukta Bhowmick</h2>
+
+        <p>{{ details.profession_title }}</p>
+        <p>
+          <a href="{{ details.work_place_link }}" target="_blank">{{details.work_location}}</a>
+        </p>
+        <div class="social-media-links">
+          <a href="{{ details.github_link }}" target="_blank"
+            ><fa-icon [icon]="faGithub"></fa-icon
+          ></a>
+          <a href="{{ details.google_scholar_link }}" target="_blank"
+            ><fa-icon [icon]="faGoogle"></fa-icon
+          ></a>
+          <a href="../../assets/cv.pdf" target="_blank"
+            ><fa-icon [icon]="faFile"></fa-icon
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-half">
+      <div class="right-container">
+        <p class="description">
+          {{details.description_paragraph_1}}
+        </p>
+        <p class="description">
+          {{details.description_paragraph_2}}
+        </p>
+        <div class="contact-information">
+          <h2 class="contact-heading">Contact Information</h2>
+          <ul class="contact">
+            <li>Email:{{details.email}}</li>
+            <li>Phone: {{details.phone}}</li>
+            <li>{{details.place}}</li>
+
+            <h3 class="contact-heading">Office Hours:</h3>
+            <ul class="office-hoours">
+              <li>{{details.officeHours_1}}</li>
+              <li>{{details.officeHours_2}}</li>
+              <li>{{details.officeHours_3}}</li>
+              <li>{{details.officeHours_4}}</li>
+              <li>{{details.officeHours_5}}</li>
+            </ul>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="homeAnnouncements.length != 0" class="announcement">
+    <h1>Latest Announcements</h1>
+    <app-announcements
+      [homeAnnouncements]="homeAnnouncements"
+    ></app-announcements>
+  </div>
+</div>
