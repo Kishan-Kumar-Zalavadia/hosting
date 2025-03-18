@@ -12,6 +12,7 @@ export interface Details {
   profile_image?: string;
   email?: string;
   phone?: string;
+  cv_link?: string;
   place?: string;
 
   officeHours_1?: string;

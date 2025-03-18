@@ -36,6 +36,9 @@ export const DETAILS: Details = {
   //* Phone Number
   phone: '+1 814-880-6875',
 
+  //* CV
+  cv_link: 'assets/cv.pdf',
+
   //* Office / Room number
   place: 'F291 Discovery Park, Denton, TX, 76201, United States',
 
