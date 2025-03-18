@@ -47,4 +47,12 @@ export const PEOPLE: People[] = [
     details:
       "I am currently pursuing my master's degree in computer science major. I am currently working on the project in the specialization of Algorithms and Graph Theory. The project main focus is on the Graph Data Anonymization and De- anonymization.",
   },
+  {
+    id: 6,
+    name: 'Kishan Kumar Zalavadia',
+    image: 'assets/images/Kishan.jpg',
+    url: 'https://www.linkedin.com/in/kishan-kumar-zalavadia/',
+    details:
+      "I am currently pursuing my master's degree working on the material science project. I am professionally Software Engineer.",
+  },
 ];
